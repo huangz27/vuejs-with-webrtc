@@ -1,18 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>WebRTC video call</h1>
+    <h3>Room</h3>
+    <input v-model="roomId"> 
+    <button type="button" class="btn btn-primary" @click="onJoin">Join</button>
+    <button type="button" class="btn btn-primary" @click="onLeave">Leave</button>
+    <vue-webrtc ref="webrtc" width="100%" :roomId="roomId"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Vue from 'vue'
+import WebRTC from 'vue-webrtc'
+// ISSUE 5: https://github.com/westonsoftware/vue-webrtc/issues/5
+import * as io from 'socket.io-client'
+window.io = io
+//
+Vue.use(WebRTC)
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+      return {
+        roomId: "public-room"
+      };
+    },
+  methods: {
+    onJoin(){
+        this.$refs.webrtc.join();
+      },
+    onShareScreen(){
+        this.$refs.webrtc.shareScreen();
+      },
+    onLeave(){
+        this.$refs.webrtc.leave();
+      }
   }
+  // mounted: function () {
+  //   this.$refs.webrtc.join()
+  // }
 }
 </script>
 
