@@ -5,13 +5,14 @@
     <input v-model="roomId"> 
     <button type="button" class="btn btn-primary" @click="onJoin">Join</button>
     <button type="button" class="btn btn-primary" @click="onLeave">Leave</button>
-    <vue-webrtc ref="webrtc" width="100%" :roomId="roomId"/>
+    <vue-webrtc ref="webrtc" width="100%" :roomId="roomId" :cameraHeight="400" :socketURL="'http://localhost:9002/'"/>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import WebRTC from 'vue-webrtc'
+
 // ISSUE 5: https://github.com/westonsoftware/vue-webrtc/issues/5
 import * as io from 'socket.io-client'
 window.io = io
@@ -21,7 +22,7 @@ export default {
   name: 'App',
   data() {
       return {
-        roomId: "public-room"
+        roomId: "test-room"
       };
     },
   methods: {
