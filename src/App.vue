@@ -5,7 +5,7 @@
     <input v-model="roomId"> 
     <button type="button" class="btn btn-primary" @click="onJoin">Join</button>
     <button type="button" class="btn btn-primary" @click="onLeave">Leave</button>
-    <vue-webrtc ref="webrtc" width="100%" :roomId="roomId" :cameraHeight="400" :socketURL="'http://localhost:9002/'"/>
+    <vue-webrtc ref="webrtc" width="100%" :roomId="roomId" :cameraHeight="300" :socketURL="'https://165.22.99.104:9002/'" />
   </div>
 </template>
 
@@ -52,3 +52,7 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+
+
+
