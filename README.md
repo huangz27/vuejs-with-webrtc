@@ -1,6 +1,6 @@
 # vuejs with webrtc
 See [DEMO](https://165.22.99.104:8081/). Running on Digital Ocean
-## Project setup
+## Project setup (Frontend)
 ```
 npm install
 ```
@@ -15,10 +15,26 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+## Project setup (Setup Signaling Server)
+https://github.com/muaz-khan/RTCMultiConnection
+
 ```
-npm run lint
+mkdir demo && cd demo
+
+# install from NPM
+npm install rtcmulticonnection
+
+# or clone from github
+git clone https://github.com/muaz-khan/RTCMultiConnection.git ./
+
+# install all required packages
+# you can optionally include --save-dev
+npm install
+
+#Run Signaling Server: open at port 9002 (defined in App.Vue) and --ssl for https
+node server --port=9002 --ssl
 ```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
