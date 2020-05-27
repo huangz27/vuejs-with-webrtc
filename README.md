@@ -1,5 +1,5 @@
 # vuejs with webrtc
-See [DEMO](https://165.22.99.104:8081/).
+See [DEMO](https://165.22.99.104:8081/). Running on Digital Ocean
 ## Project setup
 ```
 npm install
