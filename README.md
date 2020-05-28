@@ -1,6 +1,7 @@
 # vuejs with webrtc
-See [DEMO](https://165.22.99.104:8081/). Running on Digital Ocean
-if clicking join doesnt work, go to this [link](https://165.22.99.104:9002/) first (enable access to signaling server)
+See [DEMO](https://165.22.99.104:8081/). Running on Digital Ocean.
+
+If clicking the join button doesnt work, go to this [link](https://165.22.99.104:9002/) first (enable access to signaling server)
 ## Project setup (Frontend)
 ```
 npm install
