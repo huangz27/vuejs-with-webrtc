@@ -5,8 +5,11 @@
     <input v-model="roomId"> 
     <button type="button" class="btn btn-primary" @click="onJoin">Join</button>
     <button type="button" class="btn btn-primary" @click="onLeave">Leave</button>
+    <button type="button" class="btn btn-primary" @click="onShareScreen">Share Screen</button>
+
     <vue-webrtc ref="webrtc" width="100%" :roomId="roomId" :cameraHeight="300" :socketURL="'https://165.22.99.104:9002/'" />
-  </div>
+    <img ref="img" class="img-responsive" /> 
+ </div>
 </template>
 
 <script>
@@ -30,7 +33,7 @@ export default {
         this.$refs.webrtc.join();
       },
     onShareScreen(){
-        this.$refs.webrtc.shareScreen();
+        this.img = this.$refs.webrtc.shareScreen();      
       },
     onLeave(){
         this.$refs.webrtc.leave();
